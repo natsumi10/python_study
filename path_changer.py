@@ -10,7 +10,8 @@ class MainWindow_class(QtWidgets.QWidget):
     # parent is used when you another window.
     def __init__(self, parent=None):
         # init Base class. In this case it's about QWidget
-        super().__init__(parent)
+        super(MainWindow_class,self).__init__(parent=parent)
+
 
 if __name__ == "__main__":
 
@@ -19,9 +20,12 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     
     # Create a Qt widget, which will be our window.
+    # Widgets without a parent are invisible by default.
+    # All top level widgets are windows. They don't have a parent and are not nested within another widget or layout.
     window = MainWindow_class()
+
     # Show windows command for PySide6 window.
-    # Windows are hidden by default
+    # You can remove the .show() and run the app, but you'll have no way to quit it.
     window.show()
     sys.exit(app.exec())
     
