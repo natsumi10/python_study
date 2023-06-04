@@ -1,10 +1,8 @@
-#import PySide6
+# QApplication : the application handler
+# QWidget : basic empty GUI widget
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication
 
-
-
-import os
 import sys
 
 # PySide main app class. Inherit windows class.
