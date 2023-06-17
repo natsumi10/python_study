@@ -1,6 +1,6 @@
 # QApplication : the application handler
 # QWidget : basic empty GUI widget
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets,QtCore
 from PySide6.QtWidgets import QApplication
 
 import sys
@@ -11,6 +11,7 @@ class MainWindow_class(QtWidgets.QWidget):
     def __init__(self, parent=None):
         # init Base class. In this case it's about QWidget
         super(MainWindow_class,self).__init__(parent=parent)
+        self.setWindowTitle("test")
 
 
 if __name__ == "__main__":
@@ -29,9 +30,3 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec())
     
-    """
-    label = QtWidgets.QLabel("Hello", alignment=QtCore.Qt.AlignCenter)
-    label.setStyleSheet("font-size:128px;")
-    label.show()
-    sys.exit(app.exec())
-    """
