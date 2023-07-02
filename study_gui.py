@@ -11,8 +11,11 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def __initialize(self):
         center = QtWidgets.QWidget()
+        # QVBoxLayout : 垂直方向にウィジェットを並べる。（水平はQHBoxLayout）
         layout = QtWidgets.QVBoxLayout()
         center.setLayout(layout)
+
+        # 全体を格納する為のウィジェット。必須。
         self.setCentralWidget(center)
 
 
