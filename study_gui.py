@@ -5,7 +5,7 @@ from PySide6.QtWidgets import QApplication
 
 import logging
 # ログの出力名を設定
-logger = logging.getLogger("LoggingTest")
+logger = logging.getLogger(__name__)
 # ログレベルの設定
 logger.setLevel(10)
 
@@ -19,7 +19,9 @@ logger.addHandler(logOnTxtFile)
 
 # ログの出力形式の設定
 # 実行時間(年-月-日 時-分-秒,ミリ秒):行番号:ログレベル名:メッセージ文字列
-formatter = logging.Formatter('%(asctime)s:%(lineno)d:%(levelname)s:%(message)s')
+#formatter = logging.Formatter('%(asctime)s:%(lineno)d:%(levelname)s:%(message)s')
+# 実行時間(年-月-日 時-分-秒,ミリ秒) - 行番号 出力名 : ログレベル名 - メッセージ文字列
+formatter = logging.Formatter('%(asctime)s - Line %(lineno)d %(name)s : %(levelname)s: - %(message)s')
 logOnTermins.setFormatter(formatter)
 logOnTxtFile.setFormatter(formatter)
 
